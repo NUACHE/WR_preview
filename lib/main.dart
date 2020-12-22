@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/language.dart';
+import 'package:practice_arena/core/language.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        color: Colors.green[100],
+        color: Colors.green[500],
         home: Screen());
   }
 }

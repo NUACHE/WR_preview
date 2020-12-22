@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/forgotpass.dart';
+import 'package:practice_arena/authentication/forgotpass.dart';
+import 'package:practice_arena/core/components/rounded_button.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -56,19 +57,8 @@ class _SignInState extends State<SignIn> {
                     onTap: () {
                       print('Sign in');
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(100),
-                          ),
-                          color: Colors.green),
-                      child: Text(
-                        'SIGN IN',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      ),
+                    child: RoundedButton(
+                      name: 'SIGN IN',
                     ),
                   ),
                 ),
@@ -86,19 +76,10 @@ class _SignInState extends State<SignIn> {
                         ),
                       );
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
-                        ),
-                      ),
-                      child: Text(
-                        'FORGOT PASSWORD',
-                        style: TextStyle(fontSize: 20, color: Colors.green),
-                      ),
+                    child: RoundedButton(
+                      name: 'FORGOT PASSWORD',
+                      textcolor: Colors.green,
+                      buttoncolor: Colors.transparent,
                     ),
                   ),
                 ),

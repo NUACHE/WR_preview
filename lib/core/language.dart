@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/welcomepage.dart';
+import 'package:practice_arena/core/welcomepage.dart';
 
 var langs = ['Arabic', 'Chinese', 'English', 'Korean', 'Urdu'];
 

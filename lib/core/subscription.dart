@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'package:practice_arena/intro/vehicledocument.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
+import 'package:practice_arena/user/home.dart';
 
 class AddSubscription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-        backgroundColor: Colors.white12,
-        elevation: 0.0,
-        title: Text(
-          'Subscrition Plan',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-        ),
-      ),
+      appBar: CustomAppBar('Subscription Plan'),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -194,7 +186,12 @@ class AddSubscription extends StatelessWidget {
 showAlertDialog(BuildContext context, title, result) {
   Widget okButton = FlatButton(
     onPressed: () {
-      Navigator.of(context).pop();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Home(),
+        ),
+      );
     },
     child: Text(
       'OKAY',

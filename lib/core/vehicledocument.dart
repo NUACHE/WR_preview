@@ -1,79 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/personaldocument.dart';
-import 'package:practice_arena/intro/vehicledocument.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
+import 'package:practice_arena/core/subscription.dart';
+import 'package:practice_arena/core/components/styled_tile.dart';
 
-class AddVehicle extends StatelessWidget {
+class VehicleDocument extends StatefulWidget {
+  @override
+  _VehicleDocumentState createState() => _VehicleDocumentState();
+}
+
+class _VehicleDocumentState extends State<VehicleDocument> {
+  TextEditingController preset = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-        backgroundColor: Colors.white12,
-        elevation: 0.0,
-        title: Text(
-          'Add Vehicle',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-        ),
-      ),
+      appBar: CustomAppBar('Vehicle Document'),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Service Type'),
-                  ),
+                StyledTile(
+                  title: 'RC BOOK',
+                  subtitle: 'Vehicle Registration',
+                  trailing: IconButton(
+                      icon: Icon(
+                        Icons.check,
+                        color: Colors.green,
+                      ),
+                      onPressed: null),
+                ),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Brand (Auto Suggestion)'),
+                StyledTile(
+                  title: 'Insurance Policy',
+                  subtitle: 'A driving licence is an official do...',
+                  trailing: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                    strokeWidth: 1.5,
                   ),
+                ),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Model (Auto Suggestion)'),
-                  ),
+                StyledTile(
+                    title: 'Owner Certificate',
+                    subtitle: 'A passport is a travel document...'),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Manufacturer (Auto Suggestion)'),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Number Plate'),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Color'),
-                  ),
+                StyledTile(title: 'PUC', subtitle: 'Incorrect document type'),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
@@ -109,7 +97,7 @@ class AddVehicle extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => VehicleDocument(),
+                            builder: (context) => AddSubscription(),
                           ),
                         );
                       },
@@ -123,7 +111,7 @@ class AddVehicle extends StatelessWidget {
                             ),
                             color: Colors.green),
                         child: Text(
-                          'REGISTER',
+                          'NEXT',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ),

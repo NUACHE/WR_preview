@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/signin.dart';
-import 'package:practice_arena/intro/signup_profile.dart';
+import 'package:practice_arena/authentication/signin.dart';
+import 'package:practice_arena/authentication/signup_profile.dart';
+import 'package:practice_arena/core/components/rounded_button.dart';
 
 class Welcome extends StatelessWidget {
   @override
@@ -44,19 +45,9 @@ class Welcome extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(100),
-                              ),
-                              color: Colors.green),
-                          child: Text(
-                            'SIGN IN',
-                            style: TextStyle(fontSize: 20, color: Colors.white),
-                          ),
+                        child: RoundedButton(
+                          name: 'SIGN IN',
+                          buttoncolor: Colors.green,
                         ),
                       ),
                     ),
@@ -74,19 +65,9 @@ class Welcome extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(100),
-                            ),
-                          ),
-                          child: Text(
-                            'SIGN UP',
-                            style: TextStyle(fontSize: 20, color: Colors.white),
-                          ),
+                        child: RoundedButton(
+                          name: 'SIGN UP',
+                          buttoncolor: Colors.transparent,
                         ),
                       ),
                     ),

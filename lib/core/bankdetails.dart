@@ -1,44 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/bankdetails.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
+import 'package:practice_arena/core/components/rounded_button.dart';
+import 'package:practice_arena/core/personaldocument.dart';
 
-class SignUp extends StatefulWidget {
-  @override
-  _SignUpState createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
+class BankDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar('Bank Details'),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+          padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Create profile',
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w300),
-                      ),
-                    ),
-                  ],
-                ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'First Name',
-                    ),
+                    decoration: InputDecoration(labelText: 'Bank Name'),
                   ),
                 ),
                 SizedBox(
@@ -47,7 +26,8 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Last Name'),
+                    decoration:
+                        InputDecoration(labelText: 'Account Holder Name'),
                   ),
                 ),
                 SizedBox(
@@ -56,7 +36,7 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Mobile Number'),
+                    decoration: InputDecoration(labelText: 'Account Number'),
                   ),
                 ),
                 SizedBox(
@@ -65,16 +45,7 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Home Address'),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Password'),
+                    decoration: InputDecoration(labelText: 'Swift/IFSC Code'),
                   ),
                 ),
                 SizedBox(
@@ -103,31 +74,20 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                      top: 38.0, left: 38.0, right: 38.0, bottom: 38.0),
+                  padding:
+                      const EdgeInsets.only(top: 18.0, left: 38.0, right: 38.0),
                   child: Center(
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BankDetails(),
+                            builder: (context) => PersonalDocument(),
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(100),
-                            ),
-                            color: Colors.green),
-                        child: Text(
-                          'REGISTER',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
+                      child: RoundedButton(
+                        name: 'NEXT',
                       ),
                     ),
                   ),

@@ -1,58 +1,77 @@
 import 'package:flutter/material.dart';
-import 'package:practice_arena/intro/personaldocument.dart';
+import 'package:practice_arena/core/addvehicle.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
+import 'package:practice_arena/core/components/rounded_button.dart';
+import 'package:practice_arena/core/components/styled_tile.dart';
 
-class BankDetails extends StatelessWidget {
+class PersonalDocument extends StatefulWidget {
+  @override
+  _PersonalDocumentState createState() => _PersonalDocumentState();
+}
+
+class _PersonalDocumentState extends State<PersonalDocument> {
+  TextEditingController preset = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-        backgroundColor: Colors.white12,
-        elevation: 0.0,
-        title: Text(
-          'Bank Details',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-        ),
-      ),
+      appBar: CustomAppBar('Personal Document'),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Bank Name'),
-                  ),
+                StyledTile(
+                  title: 'Birth Certificate',
+                  subtitle: 'Vehicle Registration...',
+                  trailing: IconButton(
+                      icon: Icon(
+                        Icons.check,
+                        color: Colors.green,
+                      ),
+                      onPressed: null),
+                ),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration:
-                        InputDecoration(labelText: 'Account Holder Name'),
+                StyledTile(
+                  title: 'Driving Licence',
+                  subtitle: 'A driving licence is an official do...',
+                  trailing: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                    strokeWidth: 1.5,
                   ),
+                ),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Account Number'),
-                  ),
+                StyledTile(
+                    title: 'Passport',
+                    subtitle: 'A passport is a travel document...'),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Swift/IFSC Code'),
+                ListTile(
+                  onTap: () {},
+                  title: Text('Election Card'),
+                  subtitle: Text('Incorrect document type'),
+                  trailing: InkWell(
+                    child: Text('UPLOAD',
+                        style: TextStyle(
+                            color: Colors.green, fontWeight: FontWeight.bold)),
                   ),
+                ),
+                Divider(
+                  thickness: 2.5,
                 ),
                 SizedBox(
                   height: 10,
@@ -88,23 +107,12 @@ class BankDetails extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PersonalDocument(),
+                            builder: (context) => AddVehicle(),
                           ),
                         );
                       },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(100),
-                            ),
-                            color: Colors.green),
-                        child: Text(
-                          'NEXT',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
+                      child: RoundedButton(
+                        name: 'NEXT',
                       ),
                     ),
                   ),
