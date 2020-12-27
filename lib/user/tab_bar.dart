@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
 import 'package:practice_arena/core/components/dropdown_button.dart';
 
 class CustomTabBar extends StatelessWidget with PreferredSizeWidget {
@@ -20,15 +21,10 @@ class CustomTabBar extends StatelessWidget with PreferredSizeWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
+        appBar: CustomAppBar(
+          title,
+          setheight: 100,
           actions: [CustomDropDownButton()],
-          iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-          backgroundColor: Colors.white12,
-          elevation: 0.0,
-          title: Text(
-            'Summary',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-          ),
           bottom: TabBar(
             indicatorColor: Colors.green,
             labelColor: Colors.green,

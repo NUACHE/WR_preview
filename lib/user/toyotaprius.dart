@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:practice_arena/core/components/custom_appbar.dart';
 
 class ToyotaPrius extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-        backgroundColor: Colors.white12,
-        elevation: 0.0,
-        title: Text(
-          'Toyota Prius',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-        ),
-      ),
+      appBar: CustomAppBar('Toyota Prius'),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

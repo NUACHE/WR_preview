@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:practice_arena/user/tab_bar.dart';
 
 class Earning extends StatelessWidget {
   static List<charts.Series<OrdinalSales, String>> _createSampleData() {
@@ -58,61 +59,9 @@ class Earning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          actions: [
-            FlatButton(
-              onPressed: null,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.0, vertical: 5.0),
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(242, 245, 247, 1),
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Normal",
-                      style: TextStyle(
-                        color: Colors.green,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.green,
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-          iconTheme: IconThemeData(color: Colors.black87, opacity: 0.7),
-          backgroundColor: Colors.white12,
-          elevation: 0.0,
-          title: Text(
-            'Earnings',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w300),
-          ),
-          bottom: TabBar(
-            indicatorColor: Colors.green,
-            labelColor: Colors.green,
-            onTap: (index) {},
-            tabs: <Widget>[
-              Tab(
-                text: "TODAY",
-              ),
-              Tab(
-                text: "WEEKLY",
-              )
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[Tab1(), CustomRoundedBars(_createSampleData())],
-        ),
-      ),
+    return CustomTabBar(
+      'Earnings',
+      actions: [Tab1(), CustomRoundedBars(_createSampleData())],
     );
   }
 }

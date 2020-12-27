@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice_arena/user/earnings.dart';
 import 'package:practice_arena/user/help.dart';
+import 'package:practice_arena/user/map.dart';
 import 'package:practice_arena/user/ratings.dart';
 import 'package:practice_arena/user/settings.dart';
 import 'package:practice_arena/user/summary.dart';
@@ -140,6 +141,14 @@ class Home extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Map(),
+                        ),
+                      );
+                    },
                     leading: Icon(Icons.home),
                     title: Text('Home'),
                   ),

@@ -5,13 +5,14 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
   final List<Widget> actions;
   final PreferredSizeWidget bottom;
-
+  final double setheight;
   CustomAppBar(
     this.title, {
     Key key,
     this.actions,
     this.bottom,
-  })  : preferredSize = Size.fromHeight(55.0),
+    this.setheight,
+  })  : preferredSize = Size.fromHeight(setheight ?? 55.0),
         super(key: key);
 
   @override
